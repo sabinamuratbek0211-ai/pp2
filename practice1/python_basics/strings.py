@@ -15,3 +15,8 @@ print(a[2])
 #Replace String & Split String
 a = "Hello, Bro!"
 print(a.replace("H", "r"))
+
+#Looping Through a String
+for x in "banana":
+  print(x)
+  
