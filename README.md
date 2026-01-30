@@ -1,4 +1,4 @@
-#Practice 1
+# Practice 1
 
 ### 2.4 Python Basics from W3Schools
 
