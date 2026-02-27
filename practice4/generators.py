@@ -1,7 +1,7 @@
 #Create a generator that generates the squares of numbers up to some number N.
 def square_generator(n):
     for i in range(n + 1):
-        yield i * i
+        yield i * i #return
 
 N = int(input())
 for value in square_generator(N):

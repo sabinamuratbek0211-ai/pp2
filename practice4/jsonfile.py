@@ -1,7 +1,7 @@
 import json
 
 
-with open("sample-data.json", "r", encoding="utf-8") as f:
+with open(r"C:\Users\sabin\OneDrive\Pictures\Documents\pp2_2026\practice4\sample-data.json", "r", encoding="utf-8") as f:
     data = json.load(f)
 
 interfaces = data.get("imdata", [])
@@ -13,7 +13,7 @@ print(f"{'DN':50} {'Description':20} {'Speed':6} {'MTU':6}")
 print("-" * 80)
 
 
-for item in interfaces:
+for item in interfaces[:3]:
     attrs = item["l1PhysIf"]["attributes"]
     dn = attrs.get("dn", "")
     descr = attrs.get("descr", "")
