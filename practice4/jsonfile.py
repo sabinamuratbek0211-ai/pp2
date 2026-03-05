@@ -1,10 +1,9 @@
 import json
 
-
 with open(r"C:\Users\sabin\OneDrive\Pictures\Documents\pp2_2026\practice4\sample-data.json", "r", encoding="utf-8") as f:
-    data = json.load(f)
+    data = json.load(f) #конверт джисон-питон
 
-interfaces = data.get("imdata", [])
+interfaces = data.get("imdata", []) #
 
 
 print("Interface Status")
