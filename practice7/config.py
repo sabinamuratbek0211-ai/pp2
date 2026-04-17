@@ -1,7 +1,7 @@
-DB_CONFIG = {
+params = {
     "host": "localhost",
-    "port": "5432",
-    "dbname": "",
+    "database": "sabina",
     "user": "postgres",
-    "password": "12345678"
+    "password": "12345678", 
+    "port": "5432"
 }

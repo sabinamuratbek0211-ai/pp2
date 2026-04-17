@@ -1,4 +1,4 @@
-DB_CONFIG = {
+params = {
     "host": "localhost",
     "port": "5432",
     "dbname": "",
