@@ -1,6 +1,6 @@
 params = {
     "host": "localhost",
-    "database": "sabina",
+    "database": "",
     "user": "postgres",
     "password": "12345678", 
     "port": "5432"
