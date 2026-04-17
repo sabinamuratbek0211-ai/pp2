@@ -14,4 +14,7 @@ else:
 #Remove the folder "myfolder":
 
 import os
-os.rmdir("myfolder")
+os.rmdir("myfolder") #if empty only
+
+import shutil
+shutil.rmtree("myfolder")  #remove non empty 
