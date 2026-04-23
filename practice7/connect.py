@@ -1,11 +1,16 @@
 import psycopg2
+from config import load_config
 
-conn = psycopg2.connect(
-    host: "localhost",
-    port: "5432",
-    dbname: "",
-    user: "postgres",
-    password: "12345678"
-)
+def get_connection():
+    try:
+        conn = psycopg2.connect(**load_config())
+        print("Connected successfully")
+        return conn
+    except Exception as e:
+        print("Connection error:", e)
+        return None
 
-cur = conn.cursor()
+
+conn = get_connection()
+if conn:
+    conn.close()
