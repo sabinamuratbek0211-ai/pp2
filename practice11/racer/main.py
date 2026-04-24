@@ -31,7 +31,7 @@ class Player(pygame.sprite.Sprite):
         # Load and scale player image
         self.image = pygame.image.load("Player.png").convert_alpha()
         self.image = self.image.subsurface(self.image.get_bounding_rect()).copy()
-        self.image = pygame.transform.scale(self.image, (80, 110))
+        self.image = pygame.transform.scale(self.image, (120, 110))
 
         self.rect = self.image.get_rect()
         self.rect.center = (SCREEN_WIDTH // 2, 520)
@@ -155,4 +155,3 @@ while True:
 
     pygame.display.update()
     clock.tick(FPS)
-    
