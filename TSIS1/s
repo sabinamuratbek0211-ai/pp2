@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Sabina",
+        "email": "sabinamuratbek0211@gmail.com",
+        "birthday": "2006-11-02",
+        "group": "Family",
+        "phones": [
+            {
+                "phone": "+77777700707",
+                "type": "mobile"
+            },
+            {
+                "phone": "+77070291419",
+                "type": "mobile"
+            },
+            {
+                "phone": "+7070291419",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "name": "Dinassyl",
+        "email": "dinazavr@gmail.com",
+        "birthday": "2006-02-05",
+        "group": "Family",
+        "phones": [
+            {
+                "phone": "+77075505050",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "name": "Aiym",
+        "email": "aiymka@gmail.com",
+        "birthday": "2006-11-11",
+        "group": "Friend",
+        "phones": [
+            {
+                "phone": "+77070007070",
+                "type": "work"
+            }
+        ]
+    },
+    {
+        "name": "Ismira",
+        "email": "ismir@gmail.com",
+        "birthday": "2007-07-07",
+        "group": "Work",
+        "phones": [
+            {
+                "phone": "+77070007575",
+                "type": "work"
+            }
+        ]
+    }
+]
