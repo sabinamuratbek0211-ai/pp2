@@ -140,7 +140,10 @@ while True:
             elif mode == "equilateral_triangle":
                 side = abs(x2 - x1)
                 h = int(side * math.sqrt(3) / 2)
-                points = [(x1, y1), (x1 + side, y1), (x1 + side // 2, y1 - h)]
+                if y2 > y1:
+                    points = [(x1, y1), (x1 + side, y1), (x1 + side // 2, y1 + h)]
+                else:
+                    points = [(x1, y1), (x1 + side, y1), (x1 + side // 2, y1 - h)]
                 pygame.draw.polygon(screen, color, points, 3)
 
             # Rhombus
