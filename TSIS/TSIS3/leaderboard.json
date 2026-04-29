@@ -1,6 +1,11 @@
 [
     {
         "name": "sab",
+        "score": 2499,
+        "distance": 2349
+    },
+    {
+        "name": "sab",
         "score": 2206,
         "distance": 2076
     },
@@ -43,10 +48,5 @@
         "name": "sab",
         "score": 800,
         "distance": 790
-    },
-    {
-        "name": "sab",
-        "score": 742,
-        "distance": 712
     }
 ]

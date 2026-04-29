@@ -4,7 +4,6 @@ import sys
 
 pygame.init()
 
-# Screen
 WIDTH = 400
 HEIGHT = 600
 CELL = 20
@@ -15,15 +14,14 @@ pygame.display.set_caption("Snake")
 clock = pygame.time.Clock()
 font = pygame.font.SysFont("Verdana", 20)
 
-# Colors
 WHITE = (255,255,255)
 BLACK = (0,0,0)
 GREEN = (0,180,0)
-RED = (0,200,0)        # обычная еда (зелёная — логично)
-POISON_COLOR = (200,0,0)  # яд — ярко красный
+RED = (0,200,0)        
+POISON_COLOR = (200,0,0)  
 GRAY = (200,200,200)
 
-# Snake
+
 snake = [(100,100),(80,100),(60,100)]
 direction = "RIGHT"
 next_dir = "RIGHT"
@@ -32,7 +30,7 @@ score = 0
 level = 1
 speed = 7
 
-# Таймеры
+
 FOOD_LIFETIME = 5000
 POISON_LIFETIME = 6000
 
@@ -43,13 +41,13 @@ def rand_pos():
         if (x,y) not in snake:
             return (x,y)
 
-# Food
+
 food = {
     "pos": rand_pos(),
     "time": pygame.time.get_ticks()
 }
 
-# Poison
+
 poison = {
     "pos": rand_pos(),
     "time": pygame.time.get_ticks()
@@ -74,7 +72,7 @@ while True:
 
     direction = next_dir
 
-    # движение
+    
     x,y = snake[0]
 
     if direction=="UP": y-=CELL
@@ -84,7 +82,7 @@ while True:
 
     head = (x,y)
 
-    # столкновения
+    
     if x<0 or y<0 or x>=WIDTH or y>=HEIGHT:
         break
 
@@ -93,7 +91,7 @@ while True:
 
     snake.insert(0, head)
 
-    # еда
+    
     if head == food["pos"]:
         score += 1
 
@@ -109,7 +107,7 @@ while True:
     else:
         snake.pop()
 
-    # яд
+    
     if head == poison["pos"]:
         for _ in range(2):
             if len(snake) > 1:
@@ -125,37 +123,37 @@ while True:
 
     now = pygame.time.get_ticks()
 
-    # исчезновение еды
+    
     if now - food["time"] > FOOD_LIFETIME:
         food = {
             "pos": rand_pos(),
             "time": now
         }
 
-    # исчезновение яда (ВАЖНО)
+    
     if now - poison["time"] > POISON_LIFETIME:
         poison = {
             "pos": rand_pos(),
             "time": now
         }
 
-    # рисуем
+    
     screen.fill(WHITE)
 
-    # GRID (если хочешь можно убрать)
+    
     for xg in range(0, WIDTH, CELL):
         pygame.draw.line(screen, GRAY, (xg,0),(xg,HEIGHT))
     for yg in range(0, HEIGHT, CELL):
         pygame.draw.line(screen, GRAY, (0,yg),(WIDTH,yg))
 
-    # snake
+    
     for s in snake:
         pygame.draw.rect(screen, GREEN, (*s, CELL, CELL))
 
-    # обычная еда (зелёная)
+    
     pygame.draw.rect(screen, RED, (*food["pos"], CELL, CELL))
 
-    # ЯД (красный + крест)
+    
     pygame.draw.rect(screen, POISON_COLOR, (*poison["pos"], CELL, CELL))
 
     pygame.draw.line(screen, WHITE,
@@ -166,7 +164,7 @@ while True:
                      (poison["pos"][0]+CELL, poison["pos"][1]),
                      (poison["pos"][0], poison["pos"][1]+CELL), 2)
 
-    # UI
+    
     text = font.render(f"Score:{score} Level:{level}", True, BLACK)
     screen.blit(text,(10,10))
 
